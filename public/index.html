@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BonoboType | A minimalistic, customizable suspicious typing test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container stealth-hidden">
+        <h1>UnderCover Secure 100 Dashboard</h1>
+
+        <h2>Acciones</h2>
+        <div class="button-row">
+            <button id="btnStealth">Activar Stealth</button>
+            <button id="btnSelectFolder">Seleccionar carpeta para guardado de imagenes</button>
+        </div>
+
+        <h2>En directo</h2>
+        <div class="video-container">
+            <video id="video" autoplay playsinline muted width="600" height="300" class="hidden"></video>
+
+            <canvas id="canvas" width="600" height="300"></canvas>
+
+            <div id="overlay"></div>
+
+            <p id="placeholder">La cámara no está activada</p>
+        </div>
+        <div class="button-row">
+            <button id="btnActivate">Activar Cámara</button>
+            <button id="btnSelectZone">Delimitar Zona</button>
+        </div>
+
+        <p id="motionStatus">Estado: Sin movimiento</p>
+    </div>
+
+    <div id="fakeWeb">
+        <style>
+            #fakeWeb {
+                font-family: 'Roboto Mono', monospace;
+                max-width: 900px;
+                margin: 2rem auto;
+                padding: 2rem;
+                background: #1e1e2f;
+                border-radius: 10px;
+                color: #f5f5f7;
+                user-select: none;
+            }
+
+            #fakeWeb header {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 2rem;
+                font-weight: 600;
+            }
+
+            #fakeWeb .word-row {
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+                font-size: 1.8rem;
+                line-height: 2.4rem;
+            }
+
+            #fakeWeb .word {
+                padding: 6px 8px;
+                border-radius: 4px;
+                background-color: #2a2a3d;
+                cursor: default;
+                user-select: none;
+                color: #dcdce6;
+            }
+
+            /* Highlight first word as current */
+            #fakeWeb .word.current {
+                background-color: #5d89ff;
+                color: white;
+                font-weight: 700;
+                box-shadow: 0 0 8px #5d89ffaa;
+            }
+
+            /* Some subtle styles for footer */
+            #fakeWeb footer {
+                margin-top: 2rem;
+                font-size: 0.9rem;
+                color: #8889a5;
+                text-align: center;
+            }
+        </style>
+
+        <div id="fakeWeb">
+            <header>
+                <div>Words: 50</div>
+                <div>Time: 1:00</div>
+                <div>WPM: 0</div>
+            </header>
+
+            <main>
+                <div class="word-row" aria-label="Typing words">
+                    <span class="word current">lorem</span>
+                    <span class="word">ipsum</span>
+                    <span class="word">dolor</span>
+                    <span class="word">sit</span>
+                    <span class="word">amet,</span>
+                    <span class="word">consectetur</span>
+                    <span class="word">adipiscing</span>
+                    <span class="word">elit.</span>
+                    <span class="word">Sed</span>
+                    <span class="word">do</span>
+                    <span class="word">eiusmod</span>
+                    <span id="disableStealth" class="word">
+                        disable stealth
+                    </span>
+                    <span class="word">incididunt</span>
+                    <span class="word">ut</span>
+                    <span class="word">labore</span>
+                    <span class="word">et</span>
+                    <span class="word">dolore</span>
+                    <span class="word">magna</span>
+                    <span class="word">aliqua.</span>
+                    <!-- ... añade más palabras para simular -->
+                </div>
+            </main>
+
+            <footer>
+                Press any key to start typing...
+            </footer>
+        </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+</body>
+
+</html>
